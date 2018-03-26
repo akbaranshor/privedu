@@ -5,7 +5,6 @@ package com.example.android.privedu;
  */
 
 public class User {
-    int id;
     String fullName, email, password, phoneNumber;
 
     public User(String fullName, String email, String password, String phoneNumber) {

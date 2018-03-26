@@ -4,59 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorOrange"
+    android:paddingTop="24dp"
     tools:context="com.example.android.privedu.SignupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center|top">
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Sign Up"
+            android:textColor="@android:color/black"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/editNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Full Name"/>
+            android:hint="Full Name"
+            android:textColor="@android:color/black"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editEmailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress"
-            android:hint="Email"/>
+            android:hint="Email"
+            android:textColor="@android:color/black"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/editPasswordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Password"/>
+            android:textColor="@android:color/black"
+            android:hint="Password"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/editPhoneText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:hint="Phone Number"/>
+            android:textColor="@android:color/black"
+            android:hint="Phone Number"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/linkToSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="90dp"
+            android:autoLink="all"
+            android:textColor="@android:color/black"
+            android:text="Have an account? Sign In"
+            android:textSize="10sp" />
 
         <Button
             android:id="@+id/signUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/black"
+            android:onClick="signup"
             android:text="sign up"
-            android:onClick="signup"/>
+            android:textColor="@android:color/white" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
     </LinearLayout>
-
-
-
 </LinearLayout>
