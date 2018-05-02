@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOrange"
+    android:background="@color/blue"
     android:paddingTop="24dp"
     tools:context="com.example.android.privedu.SignupActivity">
 
@@ -29,8 +29,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Full Name"
-            android:textColor="@android:color/black"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/editEmailText"
@@ -38,26 +38,54 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
-            android:textColor="@android:color/black"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/editPasswordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:textColor="@android:color/black"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/editPhoneText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:textColor="@android:color/black"
             android:hint="Phone Number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="90dp"
+            android:text="Select Role :" />
+
+        <RadioGroup
+            android:id="@+id/role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="90dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/student_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student" />
+
+            <RadioButton
+                android:id="@+id/teacher_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teacher"/>
+
+        </RadioGroup>
 
         <TextView
             android:id="@+id/linkToSignIn"
@@ -66,8 +94,8 @@
             android:layout_gravity="right"
             android:layout_marginRight="90dp"
             android:autoLink="all"
-            android:textColor="@android:color/black"
             android:text="Have an account? Sign In"
+            android:textColor="@android:color/black"
             android:textSize="10sp" />
 
         <Button

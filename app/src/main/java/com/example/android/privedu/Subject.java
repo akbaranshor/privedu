@@ -5,24 +5,24 @@ package com.example.android.privedu;
  */
 
 public class Subject {
-    int price;
-    String name, lecture;
+    int price, id_teacher;
+    String name;
 
-    public Subject(int price, String name, String lecture) {
+    public Subject(int price, int id_teacher, String name) {
         this.price = price;
+        this.id_teacher = id_teacher;
         this.name = name;
-        this.lecture = lecture;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public String getName() {
-        return name;
+    public int getId_teacher() {
+        return id_teacher;
     }
 
-    public String getLecture() {
-        return lecture;
+    public String getName() {
+        return name;
     }
 }

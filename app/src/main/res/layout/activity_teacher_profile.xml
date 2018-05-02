@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.privedu.ProfileActivity"
+    tools:context="com.example.android.privedu.TeacherProfileActivity"
     android:background="@color/graylight"
     android:orientation="vertical">
     <RelativeLayout
@@ -22,9 +22,9 @@
                 android:layout_height="150dp"
                 android:src="@drawable/ic_phone_android_black_24dp"/>
 
-            <EditText
-                android:id="@+id/editTextName"
-                android:layout_marginTop="10dp"
+            <TextView
+                android:id="@+id/teacher_name"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,8 +51,8 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_email_black_24dp"/>
-            <EditText
-                android:id="@+id/editTextEmail"
+            <TextView
+                android:id="@+id/teacher_email"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -66,18 +66,27 @@
             android:paddingLeft="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_phone_android_black_24dp"/>
-            <EditText
-                android:id="@+id/editTextPhone"
+
+            <TextView
+                android:id="@+id/teacher_phone"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
                 android:text="+266 225 225"/>
+
+            <ImageButton
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="call"
+                android:src="@drawable/ic_phone_black_24dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="5dp"
@@ -89,44 +98,18 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_vpn_key_black_24dp"/>
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:inputType="textPassword"
+            <TextView
+                android:id="@+id/teacher_skill"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
                 android:text=""/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/current_user"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="asdasd"/>
+
+            </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Settings"
-        android:onClick="updateSetting"
-        android:backgroundTint="@android:color/black"
-        android:textColor="@android:color/white"/>
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Account"
-        android:onClick="delete"
-        android:backgroundTint="@android:color/black"
-        android:textColor="@android:color/white"/>
-
 
 </LinearLayout>
-

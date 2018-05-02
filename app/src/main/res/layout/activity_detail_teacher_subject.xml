@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.privedu.SubjectActivity"
+    tools:context=".DetailTeacherSubject"
     android:background="@color/blue"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
 
         android:orientation="horizontal">
 
@@ -25,15 +26,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Input Subject" />
-
-            <TextView
-                android:textSize="25dp"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choose Teacher" />
-
+                android:text="Subject" />
 
             <TextView
                 android:textSize="25dp"
@@ -66,13 +59,6 @@
                 android:layout_height="wrap_content"
                 android:text=":" />
 
-            <TextView
-                android:textSize="25dp"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":" />
-
 
         </LinearLayout>
 
@@ -84,44 +70,30 @@
             android:layout_marginTop="8dp">
 
             <EditText
-                android:textSize="20dp"
-                android:id="@+id/subject_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Subject name"/>
-
-            <Spinner
                 android:textSize="25dp"
-                android:id="@+id/teacher_spinner"
+                android:id="@+id/subject_et"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-            </Spinner>
+                android:layout_height="wrap_content"
+                android:hint="Subject Name"/>
 
             <EditText
                 android:textSize="25dp"
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:id="@+id/price_et"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Price"/>
 
         </LinearLayout>
+
     </LinearLayout>
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:layout_gravity="center"
-        android:text="Add"
-        android:onClick="add"/>
 
     <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:onClick="addTeacher"
         android:layout_gravity="center"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@android:color/white"
-        android:text="Insert Teacher"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Subject"
+        android:onClick="updateSubject"/>
+
 </LinearLayout>

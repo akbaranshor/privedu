@@ -2,6 +2,7 @@ package com.example.android.privedu;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +12,8 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +43,15 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(new Intent(SignupActivity.this, SigninActivity.class));
             }
         });
+
+        /*
+        SharedPreferences sharedPreferences = getSharedPreferences("Account", 0);
+
+        if (sharedPreferences.getBoolean("isLogin", false)) {
+            startActivity(new Intent(this, ListSubjectActivity.class));
+        }
+
+        */
     }
 
     public void signup(View view) throws NoSuchAlgorithmException, UnsupportedEncodingException {
@@ -47,19 +59,38 @@ public class SignupActivity extends AppCompatActivity {
         EditText phoneTxt = findViewById(R.id.editPhoneText);
         EditText emailTxt = findViewById(R.id.editEmailText);
         EditText passwordTxt = findViewById(R.id.editPasswordText);
+        RadioGroup radioGroup = findViewById(R.id.role);
+
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+
+        // find the radiobutton by returned id
+        RadioButton radioButton = findViewById(selectedId);
 
         String name = nameTxt.getText().toString();
         String phone = phoneTxt.getText().toString();
         String email = emailTxt.getText().toString();
         String password = passwordTxt.getText().toString();
 
+        Boolean role = false;
+        SessionManager sessionManager = new SessionManager(this);
 
+        if (email.trim().matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+") && email.length() > 0)
+        {
+            helper.insertUser(new User(name, email, MD5(password), phone, radioButton.getText().toString()));
+
+            if (radioButton.getText().toString().equals("Teacher")) role = true;
+
+            sessionManager.loginSession(email, role);
+            Toast.makeText(this,"Berhasil login",Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        /*
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
         if (email.trim().matches(emailPattern) && email.length() > 0)
         {
             Toast.makeText(this,"valid email address",Toast.LENGTH_SHORT).show();
-
-
         }
 
         User user = new User(name, email, MD5(password), phone);
@@ -77,6 +108,13 @@ public class SignupActivity extends AppCompatActivity {
             finish();
             startActivity(getIntent());
         }
+
+        */
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     public final static boolean isValidEmail(CharSequence target) {
